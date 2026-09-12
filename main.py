@@ -9,6 +9,11 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 import os
+import sys
+
+# ── Force UTF-8 stdout/stderr so emoji log lines don't crash on Windows' cp1252 console ──
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # ── Load .env FIRST before anything else ──────────────────────────────────────
 # Load .env
